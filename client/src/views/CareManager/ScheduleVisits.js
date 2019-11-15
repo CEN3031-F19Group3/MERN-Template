@@ -46,59 +46,70 @@ export default class ScheduleVisits extends React.Component {
       return (
   
           <div>
-          <Button color="secondary"  onClick={this.toggle} block>Schedule Visits</Button>
-          <Modal isOpen={this.state.modal}>
-          <form onSubmit={this.handleSubmit}>
-            <ModalHeader>Schedule Visits</ModalHeader>
-            <ModalBody>
-            <div className="row">
-              <div className="form-group col-md-4">
-              <label>Caregiver:</label>
-              <CareGiverSelect changeCurrentCareGiver={this.changeCurrentCareGiver.bind(this)}/>
-                </div>
-                </div>
-             
-              <div className="row">
-               <div className="form-group col-md-4">
-                <label>Email:</label>
-                  <input type="text" value={this.state.email} onChange={this.handleChangeEmail} className="form-control" />
-                 </div>
-                </div>
-                <Form>
-            <FormGroup>
-            <Label for="InputDate">Date</Label>
-                <Input
-                type="date"
-                name="date"
-                id="InputDate"
-                placeholder="date placeholder"
-                />
-                <Label for="Time">From:</Label>
-                <Input
-                type="time"
-                name="time"
-                id="Time"
-                placeholder="time placeholder"
-                />
-                <Label for="Time">To:</Label>
-                <Input
-                type="time"
-                name="time"
-                id="Time"
-                placeholder="time placeholder"
-                />
+            <Button color="secondary"  onClick={this.toggle} block>Schedule Visits</Button>
+            <Modal isOpen={this.state.modal}>
+              <form onSubmit={this.handleSubmit}>
+                <ModalHeader>Schedule Visits</ModalHeader>
 
-                <Label for="Text">Text Area</Label>
-                <Input type="textarea" name="text" id="exampleText" />
-            </FormGroup>
-            </Form>
-            </ModalBody>
-            <ModalFooter>
-              <input type="submit" value="Submit" color="primary" className="btn btn-primary" />
-              <Button color="danger" onClick={this.toggle}>Cancel</Button>
-            </ModalFooter>
-            </form>
-          </Modal>
+                <ModalBody>
+                  <div className="row">
+                    <div className="form-group col-md-4">
+                      <label>Caregiver:</label>
+                      <CareGiverSelect changeCurrentCareGiver={this.changeCurrentCareGiver.bind(this)}/>
+                    </div>
+                  </div>
+                  
+                  <div className="row">
+                    <div className="form-group col-md-4">
+                      <label>Email:</label>
+                      <input type="text" value={this.state.email} onChange={this.handleChangeEmail} className="form-control" />
+                    </div>
+                  </div>
+
+                  <div className="row">
+                    <div className="form-group col-md-4">
+                      <label>Select ADL List:</label>
+                      {/*Input dropdown adl here*/}
+                      
+                    </div>
+                  </div>
+
+                  <Form>
+                  <FormGroup>
+                      <Label for="InputDate">Date</Label>
+                      <Input
+                      type="date"
+                      name="date"
+                      id="InputDate"
+                      placeholder="date placeholder"
+                      />
+                      <Label for="Time">From:</Label>
+                      <Input
+                      type="time"
+                      name="time"
+                      id="Time"
+                      placeholder="time placeholder"
+                      />
+                      <Label for="Time">To:</Label>
+                      <Input
+                      type="time"
+                      name="time"
+                      id="Time"
+                      placeholder="time placeholder"
+                      />
+
+                      <Label for="Text">Text Area</Label>
+                      <Input type="textarea" name="text" id="exampleText" />
+                  </FormGroup>
+                  </Form>
+                </ModalBody>
+
+                <ModalFooter>
+                  <input type="submit" value="Submit" color="primary" className="btn btn-primary" />
+                  <Button color="danger" onClick={this.toggle}>Cancel</Button>
+                </ModalFooter>
+              </form>
+            </Modal>
           </div>
         
       );
